@@ -1,0 +1,9 @@
+Xampp runterladen
+MYSQL Workbench
+Visual Studio Code
+
+http://localhost/Immobilie/index.php
+http://localhost/Test/index.php
+
+http://localhost/dashboard/
+http://localhost/phpmyadmin/index.php

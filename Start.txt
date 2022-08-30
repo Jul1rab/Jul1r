@@ -4,6 +4,7 @@ Visual Studio Code
 
 http://localhost/Immobilie/index.php
 http://localhost/Test/index.php
+http://localhost/Mindest_Vorlage/Test/index.php?seite=diagnose
 
 http://localhost/dashboard/
 http://localhost/phpmyadmin/index.php

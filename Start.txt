@@ -7,3 +7,5 @@ http://localhost/Test/index.php
 
 http://localhost/dashboard/
 http://localhost/phpmyadmin/index.php
+
+https://www.bootstrapdash.com/blog/use-bootstrap-with-php

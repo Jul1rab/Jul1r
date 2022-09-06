@@ -49,7 +49,7 @@ if(isset($_POST["searchSchauspieler"])){
     }
 }
 if(isset($_POST["cancelSearch"])){
-    // browser wird neu geladen
+    // Seite wird neu geladen
     header("Refresh:0");
 }
 

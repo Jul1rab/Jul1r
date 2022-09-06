@@ -1,5 +1,6 @@
 <?php
 
+// SQL-Statement wird ausgeführt und zurück gegeben
 function makeStatement($query, $array = null){
 
     try{
@@ -12,6 +13,7 @@ function makeStatement($query, $array = null){
     }
 }
 
+// Ausgabe eines Tables mittels SQL-Statement
 function makeTable($query, $array = null){
     $stmt = makeStatement($query, $array);
 
@@ -31,6 +33,7 @@ function makeTable($query, $array = null){
     echo '</table>';
 }
 
+// Type Box wird erstellt - Value Wert bleibt in der Box, auch wenn man Button drückt
 function makeTypeBoxValueStayProduktionsfirmaRequired($labelName, $paramName, $type, $value = null, $placeholder){
     ?>
     <div class="row">
@@ -50,6 +53,7 @@ function makeTypeBoxValueStayProduktionsfirmaRequired($labelName, $paramName, $t
     <?php
 }
 
+// Type Box wird erstellt - Value Wert bleibt in der Box, auch wenn man Button drückt
 function makeTypeBoxValueStaySchauspielerRequired($labelName, $paramName, $type, $value = null, $placeholder){
     ?>
     <div class="row">
@@ -69,6 +73,7 @@ function makeTypeBoxValueStaySchauspielerRequired($labelName, $paramName, $type,
     <?php
 }
 
+// erstellung eines Submit Buttons
 function makeSubmitButton($buttonName = "Submit"){
     ?>
     <div class="form-group row">

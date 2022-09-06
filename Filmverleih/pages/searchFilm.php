@@ -3,11 +3,15 @@ echo "<h2>Filmsuche</h2>";
 echo "<br>";
 echo "<form method=post>";
 
+// Function wird Aufgerufen um Label und Type Box Auszugeben - Value Wert bleibt erhalten nach Button klick
 makeTypeBoxValueStayProduktionsfirmaRequired("Suche Film nach Produktionsfirma: ", "produktionsfirma", "text", null, "zb.: Harry Potter");
 
+// Ausgabe eines Buttons Suchen
 echo '<button type="submit" name="searchFilm">Suchen</button>';
+// Ausgabe eines Buttons Abbrechen
 echo '<button type="submit" name="cancelSearch">Abbrechen</button>';
 
+// Wenn Button searchFilm gedrückt wird
 if(isset($_POST["searchFilm"])){
     try{
 
@@ -18,6 +22,7 @@ if(isset($_POST["searchFilm"])){
 
         while($row = $count->fetch(PDO::FETCH_NUM)){
             foreach ($row as $r){
+                // Wenn r nicht 0 ist Ausgabe der Suche, wenn aber 0 zurück kommt Fehlermeldung
                 if($r != "0"){
                     $sql = "select f.fim_titel as 'Titel', f.fim_erscheinungsdatum as 'Erscheinungs-Datum', 
                                 p.prf_name as 'Produktionsfirma' from film f
@@ -42,6 +47,7 @@ if(isset($_POST["searchFilm"])){
 
                     while($rows = $foundProd->fetch(PDO::FETCH_NUM)){
                         foreach ($rows as $rw){
+                            // Ausgabe der gefundenen Produktionsfirma (Wert in der DB)
                             echo $rw;
                         }
                     }
@@ -51,9 +57,11 @@ if(isset($_POST["searchFilm"])){
                     echo "Gefundene Filmtitel: ".$r;
                     echo "<br>";
                     echo "<br>";
-            
+
+                    // Aufruf der Function makeTable in function.php
                     makeTable($sql);
                 }else{
+                    // Fehlermeldung - kommt danach gleich in den catch Block um Fehlermeldung Auszugeben
                     throw new Exception("<h2>Produktionsfirma nicht gefunden!<h2>");
                 }
             }
@@ -61,11 +69,13 @@ if(isset($_POST["searchFilm"])){
 
         
     }catch(Exception $e){
+        // Ausgabe aller Exceptions
         echo "<br>".$e->getMessage()."<br>";
     }
 }
+// Wenn Button cancelSearch gedrückt wird
 if(isset($_POST["cancelSearch"])){
-    // browser wird neu geladen
+    // Seite wird neu geladen
     header("Refresh:0");
 }
 echo "</form>";
